@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BES xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="BES.xsd">
+	<Fixlet>
+		<Title>Clear Custom Client Settings (WorkIdle SleepIdle)</Title>
+		<Description><![CDATA[<P dir=ltr>If BES Client setting (see below) exists and has a value, the BES Client setting will be removed.</P>
+<BLOCKQUOTE style="MARGIN-RIGHT: 0px" dir=ltr>
+<P dir=ltr>_BESClient_Resource_SleepIdle</P>
+<P dir=ltr>_BESClient_Resource_WorkIdle</P></BLOCKQUOTE>]]></Description>
+		<Relevance>if ( ( exists setting "_BESClient_Resource_SleepIdle" of it and exists values of setting "_BESClient_Resource_SleepIdle" of it ) OR ( exists setting "_BESClient_Resource_WorkIdle" of it and exists values of setting "_BESClient_Resource_WorkIdle" of it ) ) of client then true else false</Relevance>
+		<Category></Category>
+		<Source>Internal</Source>
+		<SourceID></SourceID>
+		<SourceReleaseDate>2026-09-29</SourceReleaseDate>
+		<SourceSeverity></SourceSeverity>
+		<CVENames></CVENames>
+		<SANSID></SANSID>
+		<MIMEField>
+			<Name>x-fixlet-modification-time</Name>
+			<Value>Tue, 29 Sep 2026 17:18:32 +0000</Value>
+		</MIMEField>
+		<Domain>BESC</Domain>
+		<DefaultAction ID="Action1">
+			<Description>
+				<PreLink>Click </PreLink>
+				<Link>here</Link>
+				<PostLink> to deploy this action.</PostLink>
+			</Description>
+			<ActionScript MIMEType="application/x-Fixlet-Windows-Shell">// Enter your action script here
+if { exist values of setting "_BESClient_Resource_SleepIdle" of client }
+	setting delete "_BESClient_Resource_SleepIdle" on "{now}" for client
+endif
+
+if { exist values of setting "_BESClient_Resource_WorkIdle" of client }
+	setting delete "_BESClient_Resource_WorkIdle" on "{now}" for client
+endif</ActionScript>
+		</DefaultAction>
+	</Fixlet>
+</BES>
