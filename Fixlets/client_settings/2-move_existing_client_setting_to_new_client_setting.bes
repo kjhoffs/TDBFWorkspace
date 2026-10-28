@@ -2,7 +2,7 @@
 <BES xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="BES.xsd">
 	<Task>
 		<Title>Move Existing Client Setting to New Client Setting</Title>
-		<Description><![CDATA[<P>This will be relevan if "OldClientSetting" exists and has a value<BR><BR>It will </P>
+		<Description><![CDATA[<P>This will be relevant if "OldClientSetting" exists and has a value<BR><BR>It will </P>
 <UL>
 <LI>Copy the value from "OldClientSetting" to "NewClientSetting" 
 <LI>Validate the values match between the two settings 
